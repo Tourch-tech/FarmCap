@@ -1,7 +1,7 @@
 <?php
 
     if(isset($_SESSION['usersignin'])){
-        header('Location: index.php');
+        header('Location: profile.php');
 
     }
 ?>

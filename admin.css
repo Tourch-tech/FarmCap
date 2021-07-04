@@ -22,6 +22,7 @@
     height: 100%;
     background: var(--main-color); 
     z-index: 100;
+    transition: width 300ms;
 }
 .sidebrand {
     color: var(--text-grey);
@@ -29,13 +30,13 @@
 .sidebar-brand{
     height: 90px;
     padding: 1rem 0rem 1rem 2rem;
-    color: var(--text-grey);  
+    color: #FFF;  
 }
 .sidebar-brand span{
     display: inline-block;
     padding-right: 1rem;
 }
-.sidebar-menu{
+.sidebar-menu {
     margin-top: 1rem;
 }
 .sidebar-menu li {
@@ -49,7 +50,7 @@
     color: var(--text-grey);
     font-size: 1.1rem;
 }
-.sidebar-menu a.active{
+.sidebar-menu a.active {
     background: var(--text-grey);
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -60,10 +61,34 @@
     font-size: 1.5rem;
     padding-right: 1rem;
 }
+#nav-toggle:checked + .sidebar {
+    width: 70px;
+}
+#nav-toggle:checked + .sidebar .sidebar-brand,
+#nav-toggle:checked + .sidebar li {
+    padding-left: 1rem;
+    text-align: center;
+}
+#nav-toggle:checked + .sidebar li a {
+    padding-left: 0rem;
+}
+#nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+#nav-toggle:checked + .sidebar li a span:last-child {
+    display: none;
+}
+#nav-toggle:checked ~ .main-content {
+    margin-left: 70px;
+}
+#nav-toggle:checked ~ .main-content header {
+   width: calc(100% - 70px);
+   left: 70px;
+}
 .main-content {
+    transition: margin-left 300ms;
     margin-left: 345px;
 }
 header {
+    background: #fff;
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
@@ -73,33 +98,18 @@ header {
     width: calc(100% - 345px);
     top: 0;
     z-index: 100;
-
+    transition: left 300ms;
 }
+#nav-toggle {
+    display: none;
+}
+
 header h2 {
     columns: #222;
 }
 header label span{
     font-size: 1.7rem;
     padding-right: 1rem;
-}
-.search-wrapper {
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    overflow-x: hidden;
-}
-.search-wrapper span {
-    display: inline-block;
-    padding: 0rem 1rem;
-    font-size: 1.5rem;
-}
-.search-wrapper input {
-    height: 100%;
-    padding: .5rem;
-    border: none;
-    outline: none;
 }
 .user-wrapper {
     display: flex;
@@ -111,7 +121,7 @@ header label span{
 }
 .user-wrapper small {
     display: inline-block;
-    color: var(--text-grey);   
+    color: grey;   
 }
 main {
     margin-top: 85px;
@@ -151,10 +161,10 @@ main {
 .recent-grid {
     margin-top: 3.5rem;
     display: grid;
-    grid-column-gap: 2rem;
+    grid-column-gap: 1.3rem;
     grid-template-columns: 65% auto;
 }
-.card {
+.card { 
     background: #fff; 
     border-radius: 5px;
 }
@@ -193,7 +203,7 @@ td {
 td .status {
     display: inline-block;
     height: 10px;
-    width: 20px;
+    width: 10px;
     border-radius: 50%;
     margin-right: 1rem;
 }
@@ -218,7 +228,7 @@ tr td:last-child{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem 1rem;
+    padding: .5rem .7rem;
 }
 .info {
     display: flex;
@@ -234,12 +244,129 @@ tr td:last-child{
     color: #222;
 }
 .info small {
-    font-weight: 600;
-    color: var(--text-grey);
+    font-weight: 500;
+    color: grey;
 }
-.contact small {
+.contact span {
     font-size: 1.2rem;
     display: inline-block;
     margin-left: .5rem;
     color: var(--main-color);
+}
+
+@media only screen and (max-width: 1200px) {
+        
+     .sidebar {
+        width: 70px;
+    }
+     .sidebar .sidebar-brand,
+     .sidebar li {
+        padding-left: 1rem;
+        text-align: center;
+    }
+     .sidebar li a {
+        padding-left: 0rem;
+    }
+     .sidebar .sidebar-brand h2 span:last-child,
+     .sidebar li a span:last-child {
+        display: none;
+    }
+     .main-content {
+        margin-left: 70px;
+    }
+     .main-content header {
+    width: calc(100% - 70px);
+    left: 70px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .recent-grid {
+        grid-template-columns: 60% 40%;
+    }
+}
+
+@media only screen and (max-width: 786px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recent-grid {
+        grid-template-columns: 100%;
+    }
+    .search-wrapper {
+        display: none;
+    } 
+
+    .sidebar {
+        left: -100% !important;
+    }
+
+    header h2 {
+        display: flex;
+        align-items: center;
+    }
+
+    header h2 label { 
+        display: inline-block;
+        background: var(--main-color);
+        padding-right: 0rem;
+        margin-right: 1rem;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: var(--text-grey);
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+    }
+    
+    header h2 span {
+        text-align: center;
+        padding-right: 0rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0rem;
+    }
+
+    header {
+        width: 100% !important;
+        left: 0 !important; 
+    }
+
+    #nav-toggle:checked + .sidebar {
+        left: 0 !important;
+        z-index: 100;
+        width: 345px;
+    }
+    #nav-toggle:checked + .sidebar .sidebar-brand,
+    #nav-toggle:checked + .sidebar li {
+        padding-left: 2rem;
+        text-align: left;
+    }
+    #nav-toggle:checked + .sidebar li a {
+        padding-left: 1rem;
+    }
+    #nav-toggle:checked + .sidebar .sidebar-brand h2 span:last-child,
+    #nav-toggle:checked + .sidebar li a span:last-child {
+        display: inline;
+    }
+    #nav-toggle:checked ~ .main-content {
+        margin-left: 0rem;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .cards {
+        grid-template-columns: 100%;
+    }
 }

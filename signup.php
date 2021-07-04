@@ -55,6 +55,9 @@
       width: 30%;
       border-radius: 4px;
     }
+    .linklook {
+      color: rgba(122, 183, 5, 1);
+    }
     
   </style>
 </head>
@@ -146,7 +149,7 @@
 
 
 
-            <p> already have an account?<a href="signin.php"> Sign in</a></p> 
+            <p> already have an account?<a  class="linklook" href="signin.php"> Sign in</a></p> 
 </form>
 
       </div>
@@ -215,7 +218,7 @@
 <div class="col-12 text-center">
   <br>
   <hr class="light-100">
-  <h5>&copy; tourchtech2021</h5>
+  <h5>&copy; kamitech2021</h5>
 </div>
 
 
