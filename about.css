@@ -147,7 +147,9 @@ html, body {
   h1.display-4-fay {
     font-size: 35px;
   }
-  
+  .lead {
+      display: block;
+  }
 
 
 
