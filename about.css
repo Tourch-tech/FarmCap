@@ -147,12 +147,7 @@ html, body {
   h1.display-4-fay {
     font-size: 35px;
   }
-.lead {
-    display: block;
-}
-p {
-    display: block;
-}
+
 
 
 
@@ -217,7 +212,10 @@ p {
       .social a{
         font-size: 2em;
         padding: .7rem;
-      } 
+      }
+      .lead {
+        display: block;
+      }
 }
 
 
