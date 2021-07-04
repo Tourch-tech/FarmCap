@@ -150,6 +150,9 @@ html, body {
 .lead {
     display: block;
 }
+p {
+    display: block;
+}
 
 
 
