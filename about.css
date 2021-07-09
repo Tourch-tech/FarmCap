@@ -148,7 +148,7 @@ html, body {
     font-size: 35px;
   }
   .container-fluid p {
-    padding: 0px;
+    padding: -1px;
   }
 
 
@@ -260,8 +260,8 @@ figure {
   will-change: transform;
 }
 /*--- Bootstrap Padding Fix --*/
-[class*="col-sm-12"] {
-    padding: 0rem;
+[class*="col-"] {
+    padding: 1rem;
 }
 
 
