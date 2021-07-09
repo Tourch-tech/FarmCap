@@ -257,8 +257,8 @@ figure {
   will-change: transform;
 }
 /*--- Bootstrap Padding Fix --*/
-[class*="col-"] {
-    padding: 0rem;
+[class*="col-12"] {
+    padding: 10px;
 }
 
 
