@@ -1,0 +1,292 @@
+<?php
+
+    if(isset($_SESSION['usersignin'])){
+        header('Location: signin.php');
+
+    }
+
+	if(isset($_GET['logout'])){
+		session_destroy();
+		unset($_SESSION);
+		header('Location: signin.php');
+	}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width-device-width,initial-scale=1,maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FarmCap</title>
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<link rel="stylesheet" href="admin.css" type="text/css">
+</head>
+<body>
+
+	<input type="checkbox" id="nav-toggle">
+	<div class="sidebar">
+		<div class="sidebrand">
+		<br>
+			<h2><span class="las la-seedling"></span> <span>FarmCap</span> </h2>
+		</div>
+		<div class="sidebar-menu">
+			<ul>
+				<li>
+				<br>
+					<a href="#" class="active"><span class="las la-igloo"></span>
+					<span>Dashboard</span></a>
+				</li>
+				<li>
+					<a href="#"><span class="las la-users"></span>
+					<span>Investors</span></a>
+				</li>
+				<li>
+					<a href="#"><span class="las la-clipboard-list"></span>
+					<span>Products</span></a>
+				</li>
+				<li>
+					<a href="index.php?logout=true"><span class="las la-sign-out-alt"></span>
+					<span>Logout</span></a>
+				</li>
+		</div>
+	</div>
+
+	<div class="main-content">
+		<header>
+			<h2>
+				<label for="nav-toggle">
+					<span class="las la-bars"></span>
+				</label>
+
+				Dashboard
+			</h2>
+			<div class="user-wrapper">
+				<img src="img/profile-pic.jpg" width="40px" height="40px" alt="">
+				<div>
+					<h4>Tukur&Tukur Farm</h4>
+					<small>admin</small>
+				</div>
+			</div>
+
+		</header>
+
+		<main>
+			
+			<div class="cards">
+				<div class="card-single">
+					<div>
+						<h1>12</h1>
+						<span>Investors</span>
+					</div>
+					<div>
+						<span class="las la-users"></span>
+					</div>
+				</div>
+
+				<div class="card-single">
+					<div>
+						<h1>04</h1>
+						<span>Products</span>
+					</div>
+					<div>
+						<span class="las la-clipboard-list"></span>
+					</div>
+				</div>
+
+				<div class="card-single">
+					<div>
+						<h1>4/5</h1>
+						<span>Rating</span>
+					</div>
+					<div>
+						<span class="las la-star"></span>
+					</div>
+				</div>
+
+				<div class="card-single">
+					<div>
+						<h1>N600k</h1>
+						<span>Income generated</span>
+					</div>
+					<div>
+						<span class="lab la-google-wallet"></span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="recent-grid">
+				<div class="projects">
+					<div class="card">
+						<div class="card-header">
+							<h3>Products</h3>
+
+							<a href="#"><button>see all <span class="las la-arrow-right">
+							</span></button></a>
+						</div>
+
+						<div class="card-body">
+							<div class="table-responsive">
+								<table width="100%">
+									<thead>
+										<tr>
+											<td>Product</td>
+											<td>Minimum period</td>
+											<td>interest rate</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Rice</td>
+											<td> 20 weeks</td>
+											<td> 
+												<span class="status purple">
+												</span>
+												1.25%/wk
+											</td>
+										</tr>
+										<tr>
+											<td>Poultry</td>
+											<td>21 weeks</td>
+											<td> 
+												<span class="status pink">
+												</span>
+												1.25%/wk
+											</td>
+										</tr>
+										<tr>
+											<td>Yam</td>
+											<td>24-48 weeks</td>
+											<td> 
+												<span class="status orange">
+												</span>
+												1%/wk
+											</td>
+										</tr>
+										<tr>
+
+											<td>Onions</td>
+											<td>16 weeks</td>
+											<td> 
+												<span class="status purple"></span>
+												1.25%/wk
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="customers">
+					<div class="card">
+						<div class="card-header">
+							<h3>Investors</h3>
+
+							<a href="#"><button>see all <span class="las la-arrow-right">
+							</span></button></a>
+						</div>
+
+						<div class="card-body">
+							<div class="customer">
+								<div class="info">
+									<img src="img/3.jpg" width="40px" height="40px" alt="">
+									<div>
+										<h4> Laurencia Okoro</h4>
+										<small>Investor</small>
+									</div>
+							  	</div>
+								<div class="contact">
+									<span class="las la-user-circle"></span>
+									<span class="las la-comment"></span>
+									<span class="las la-phone"></span>
+								</div>
+							</div>
+							<div class="customer">
+								<div class="info">
+									<img src="img/4.jpg" width="40px" height="40px" alt="">
+									<div>
+										<h4> David Chukwuemeka</h4>
+										<small>Investor</small>
+									</div>
+							  	</div>
+								<div class="contact">
+									<span class="las la-user-circle"></span>
+									<span class="las la-comment"></span>
+									<span class="las la-phone"></span>
+								</div>
+							</div>
+							<div class="customer">
+								<div class="info">
+									<img src="img/5.jpg" width="40px" height="40px" alt="">
+									<div>
+										<h4> Divine Ose</h4>
+										<small>Investor </small>
+									</div>
+							  	</div>
+								<div class="contact">
+									<span class="las la-user-circle"></span>
+									<span class="las la-comment"></span>
+									<span class="las la-phone"></span>
+								</div>
+							</div>
+							<div class="customer">
+								<div class="info">
+									<img src="img/6.jpg" width="40px" height="40px" alt="">
+									<div>
+										<h4> Ayo Harrison</h4>
+										<small>Investor</small>
+									</div>
+							  	</div>
+								<div class="contact">
+									<span class="las la-user-circle"></span>
+									<span class="las la-comment"></span>
+									<span class="las la-phone"></span>
+								</div>
+							</div>
+							<div class="customer">
+								<div class="info">
+									<img src="img/7.jpg" width="40px" height="40px" alt="">
+									<div>
+										<h4>Mary Atu</h4>
+										<small>Investor</small>
+									</div>
+							  	</div>
+								<div class="contact">
+									<span class="las la-user-circle"></span>
+									<span class="las la-comment"></span>
+									<span class="las la-phone"></span>
+								</div>
+							</div>
+							<div class="customer">
+								<div class="info">
+									<img src="img/8.jpg" width="40px" height="40px" alt="">
+									<div>
+										<h4> Promise Anumundu </h4>
+										<small>Investor</small>
+									</div>
+							  	</div>
+								<div class="contact">
+									<span class="las la-user-circle"></span>
+									<span class="las la-comment"></span>
+									<span class="las la-phone"></span>
+								</div>
+							</div>
+							
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</div>
+
+
+</body>
+</html>
+
