@@ -1,7 +1,3 @@
-<?php
- require_once('config.php')
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -156,61 +152,6 @@
     </div>
   </div>
 </section>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="text/javascript">
-    $(function(){
-      $('#register').click(function(e){
-
-         var valid = this.form.checkValidity();
-
-         if(valid){
-
-         var interest      = $('#interest').val();
-         var fullname      = $('#fullname').val();
-         var email         = $('#email').val();
-         var phonenumber   = $('#phonenumber').val();
-         var password      = $('#password').val();
-
-
-           e.preventDefault();
-
-           $.ajax({
-              type: 'POST',
-              url: 'process.php',
-              data: {interest: interest,fullname: fullname,email: email,phonenumber: phonenumber,password: password},
-              success: function(data){
-                Swal.fire({
-                            'title': 'successful',
-                            'text': 'click sign in to continue',
-                            'type': 'success'
-                            })
-
-              },
-              error: function(data){
-                Swal.fire({
-                        'title': 'Errors',
-                        'text': 'failed to register',
-                        'type': 'error'
-                        })
-
-              }
-           });
-          
-
-         }else{
-           
-         }
-        
-
-      });
-  
-   
-
-    });
-
-</script>
 
 
 <!--footer-->
