@@ -79,6 +79,9 @@ html, body {
   margin-top: .3rem;
   margin-bottom: 1rem;
 }
+.fix-text {
+  font-size: 20px;
+}
 .img-fluid {
   height: 500px;
 }
